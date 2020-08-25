@@ -11,7 +11,7 @@
 		<h2  align="center">INFORMÁTICA Y OTROS CAMPOS DEL CONOCIMIENTO</h2>
 		<script type="text/javascript" src="./lib/vis.min.js"></script>
 
-		<div id="RELACION1" style="height:500px; width:50%; float:left; background-color:#000000" ></div>
+		<div id="RELACION1" style="height:800px; width:100%; float:left; background-color:#000000" ></div>
 		<script type="text/javascript">
 		
 		// Nodos de la red
@@ -109,69 +109,6 @@
 			
 			var network = new vis.Network(container, data, options);
 		</script>
-
-		<div id="RELACION2" style="height:500px; width:50%; float:right; background-color:#000000">
-		</div>
-		<script type="text/javascript">
-		// DEFINIR ARREGLO DE NODOS RELACION2
-			var nodes = [
-				{id: 1, label: 'LOGÍSTICA DE ENTRADA', "group": 2, font: '12px arial white', level: 0},
-				{id: 2, label: 'PRODUCCIÓN', "group": 2, font: '12px arial white', level: 0},
-				{id: 3, label: 'LOGÍSTICA', "group": 2, font: '12px arial white', level: 0},
-				{id: 4, label: 'VENTAS', "group": 2, font: '12px arial white', level: 0},
-				{id: 5, label: 'SERVICIO AL CLIENTE', "group": 2, font: '12px arial white', level: 0},
-				{id: 6, label: 'INFORMÁTICA', "group": 3, font: '12px arial white', mass:80, level: 2},
-				{id: 7, label: 'ARQUITECTURA EMPRESARIAL', "group": 4, font: '16px arial white', mass:80, level: 1}
-			];
-
-		// DEFINIR LAS RELACIONES ENTRE LOS NODOS
-			var edges = [
-				{from: 1, to: 2},
-				{from: 2, to: 3},
-				{from: 3, to: 4},
-				{from: 4, to: 5},
-				{from: 7, to: 1},
-				{from: 7, to: 2},
-				{from: 7, to: 3},
-				{from: 7, to: 4},
-				{from: 7, to: 5},
-				{from: 6, to: 7}
-			];
-
-		// CREAR LA RED
-			var container = document.getElementById('RELACION2');
-			var data = {
-				nodes: nodes,
-				edges: edges
-			};
-			
-			var options = {
-				layout: {
-					hierarchical: true
-					},
-				
-                nodes: {
-						shape: 'dot',
-						size: 16
-				},
-                physics: {
-                    forceAtlas2Based: {
-                        gravitationalConstant: -26,
-                        centralGravity: 0.005,
-                        springLength: 230,
-                        springConstant: 0.18
-                    },
-                    maxVelocity: 146,
-                    solver: 'forceAtlas2Based',
-                    timestep: 0.35,
-                    stabilization: {iterations: 150}
-                }
-            };
-			
-			var network = new vis.Network(container, data, options);
-		</script>
-
-
 	</div>
 	</body>
 </html>
