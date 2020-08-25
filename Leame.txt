@@ -1,0 +1,3 @@
+Diseño basado en la librería VIS.JS.
+
+Mauricio Gonzalez Buitrago
